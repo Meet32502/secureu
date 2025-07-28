@@ -291,7 +291,13 @@ class ReportGenerator:
             for header, display_name in header_checks:
                 status = "✅ Present" if headers.get(header) else "❌ Missing"
                 status_class = "status-pass" if headers.get(header) else "status-fail"
-                value = headers.get(header, 'Not Set')[:50] + ('...' if len(str(headers.get(header, ''))) > 50 else '')
+                val = headers.get(header)
+                 if val is None:
+                     value = 'Not Set'
+                 else:
+                     value = str(val)[:50] + ('...' if len(str(val)) > 50 else '')
+
+                #value = headers.get(header, 'Not Set')[:50] + ('...' if len(str(headers.get(header, ''))) > 50 else '')
                 
                 html_content += f"""
                         <tr>
