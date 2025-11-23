@@ -16,7 +16,7 @@ import base64
 
 # Page configuration
 st.set_page_config(
-    page_title="CyberHygiene Scanner",
+    page_title="Secureu",
     page_icon="🔒",
     layout="wide",
     initial_sidebar_state="expanded"
